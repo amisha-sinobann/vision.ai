@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0b0f;
+  --color-surface: #111318;
+  --color-surface2: #161820;
+  --color-surface3: #1c1f2a;
+  --color-border: rgba(255,255,255,0.07);
+  --color-border2: rgba(255,255,255,0.12);
+  --color-accent: #4f7fff;
+  --color-accent2: #6e9bff;
+  --color-accent-pink: #ff6bbf;
+  --color-green: #3dffa0;
+  --color-red: #ff4f4f;
+  --color-text: #e8eaf0;
+  --color-text2: #8a8fa8;
+  --color-text3: #5a5f75;
+  
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Syne", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-surface3); border-radius: 2px; }
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--color-red); }
+  50% { opacity: 0.6; box-shadow: 0 0 12px var(--color-red); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 4px var(--color-green); }
+  50% { box-shadow: 0 0 8px var(--color-green); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); opacity: 0.8; }
+  50% { transform: scaleY(0.4); opacity: 0.4; }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes glitch {
+  0%, 90%, 100% { transform: translate(0); opacity: 1; }
+  91% { transform: translate(-2px, 1px); opacity: 0.9; }
+  92% { transform: translate(2px, -1px); opacity: 1; }
+  93% { transform: translate(0, 2px); opacity: 0.8; }
+  94% { transform: translate(-1px, 0); opacity: 1; }
+  95% { transform: translate(0); opacity: 0.6; }
+  96% { transform: translate(3px, -2px); opacity: 1; }
+  97% { transform: translate(-3px, 1px); opacity: 0.9; }
+  98% { transform: translate(1px, 2px); opacity: 1; }
+}
+
+@keyframes glitch-top {
+  0%, 88%, 100% { transform: translate(-3px, -2px); opacity: 0.7; }
+  89% { transform: translate(4px, -2px); opacity: 0.9; }
+  90% { transform: translate(-4px, 1px); opacity: 0.6; }
+  91% { transform: translate(2px, -3px); opacity: 0.8; }
+  92% { transform: translate(-3px, 2px); opacity: 1; }
+  93% { transform: translate(0, -1px); opacity: 0.5; }
+  94% { transform: translate(5px, 0); opacity: 0.9; }
+  95% { transform: translate(-3px, -2px); opacity: 0.7; }
+}
+
+@keyframes glitch-bottom {
+  0%, 88%, 100% { transform: translate(3px, 2px); opacity: 0.7; }
+  89% { transform: translate(-4px, 2px); opacity: 0.9; }
+  90% { transform: translate(4px, -1px); opacity: 0.6; }
+  91% { transform: translate(-2px, 3px); opacity: 0.8; }
+  92% { transform: translate(3px, -2px); opacity: 1; }
+  93% { transform: translate(0, 1px); opacity: 0.5; }
+  94% { transform: translate(-5px, 0); opacity: 0.9; }
+  95% { transform: translate(3px, 2px); opacity: 0.7; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
